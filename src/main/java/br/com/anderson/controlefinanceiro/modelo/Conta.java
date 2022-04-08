@@ -18,6 +18,9 @@ public class Conta {
 	private BigDecimal saldo;
 	private String logotipo;
 	private Boolean ativada;
+	
+	public Conta() {
+	}
 
 	public BigDecimal getSaldo() {
 		return saldo;

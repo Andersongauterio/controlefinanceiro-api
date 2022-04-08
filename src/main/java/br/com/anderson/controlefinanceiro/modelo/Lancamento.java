@@ -26,6 +26,10 @@ public class Lancamento {
 	private Conta conta;
 	@ManyToOne
 	private Usuario usuario;
+	
+	public Lancamento() {
+		
+	}
 
 	public Lancamento(String descricao, BigDecimal valor, LocalDate dataCriacao, TipoMovimento tipoEntrada,
 			Conta conta_id, Usuario usuario_id) {
