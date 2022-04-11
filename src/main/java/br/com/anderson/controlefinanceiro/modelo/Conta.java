@@ -17,7 +17,7 @@ public class Conta {
 	private String descricao;
 	private BigDecimal saldo;
 	private String logotipo;
-	private Boolean ativada;
+	private Boolean status;
 	
 	public Conta() {
 	}
@@ -38,12 +38,12 @@ public class Conta {
 		this.logotipo = logotipo;
 	}
 
-	public Boolean getAtivada() {
-		return ativada;
+	public Boolean getStatus() {
+		return status;
 	}
 
-	public void setAtivada(Boolean ativada) {
-		this.ativada = ativada;
+	public void setStatus(Boolean ativada) {
+		this.status = ativada;
 	}
 
 	public Long getId() {
