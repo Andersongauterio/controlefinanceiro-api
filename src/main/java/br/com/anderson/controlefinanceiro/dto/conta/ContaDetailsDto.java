@@ -20,7 +20,7 @@ public class ContaDetailsDto {
 		this.descricao = conta.getDescricao();
 		this.saldo = conta.getSaldo();
 		this.logotipo = conta.getLogotipo();
-		this.ativada = conta.getAtivada();
+		this.ativada = conta.getStatus();
 	}
 
 
@@ -47,10 +47,4 @@ public class ContaDetailsDto {
 	public Boolean getAtivada() {
 		return ativada;
 	}
-
-	
-	
-	
-	
-	
 }
