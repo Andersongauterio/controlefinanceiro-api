@@ -11,7 +11,7 @@ public class ContaDetailsDto {
 	private String descricao;
 	private BigDecimal saldo;
 	private String logotipo;
-	private Boolean ativada;
+	private Boolean status;
 	
 	
 	public ContaDetailsDto(Conta conta) {
@@ -20,7 +20,7 @@ public class ContaDetailsDto {
 		this.descricao = conta.getDescricao();
 		this.saldo = conta.getSaldo();
 		this.logotipo = conta.getLogotipo();
-		this.ativada = conta.getStatus();
+		this.status = conta.getStatus();
 	}
 
 
@@ -44,7 +44,7 @@ public class ContaDetailsDto {
 		return logotipo;
 	}
 
-	public Boolean getAtivada() {
-		return ativada;
+	public Boolean getStatus() {
+		return status;
 	}
 }

@@ -14,7 +14,7 @@ public class AtualizaContaForm {
 	private String nome;
 	private String descricao;
 	private String logotipo;
-	@NotNull @NotEmpty
+	@NotNull
 	private Boolean status;
 	
 	

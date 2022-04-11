@@ -44,10 +44,17 @@ public class ContaController {
 
 	}
 	
-	@PutMapping("/id")
+	@PutMapping("/{id}")
 	@Transactional
 	public ResponseEntity<ContaDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizaContaForm form) {
-		return null;
+		Optional<Conta> optional = contaRepository.findById(id);
+		if (optional.isPresent()) {
+			Conta conta = form.atualizar(id, contaRepository);
+			return ResponseEntity.ok(new ContaDto(conta));
+		}
+		
+		return ResponseEntity.notFound().build();
+		
 	}
 
 }

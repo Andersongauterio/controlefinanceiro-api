@@ -1,8 +1,8 @@
 INSERT INTO USUARIO(nome) VALUES ('Anderson');
 INSERT INTO USUARIO(nome) VALUES ('Ana');
 
-INSERT INTO CONTA(nome, descricao, saldo, logotipo, ativada ) VALUES ('Itau', 'Conta principal', '1900.50', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmOGFwxrl6X5ESHEnfcv6eefm6lbQcypC_6V0qNYVrIWcLrLf78WvCRQAeKpFJprs5tC0&usqp=CAU', true);
-INSERT INTO CONTA(nome, descricao, saldo, logotipo, ativada ) VALUES ('Nubank', 'Conta com rendimento 100% do CDI', '3421.12', 'https://nubank.com.br/_next/static/images/cbf49577e11c5507dbd0019319ae8a66-kit-logo.png', true);
+INSERT INTO CONTA(nome, descricao, saldo, logotipo, status ) VALUES ('Itau', 'Conta principal', '1900.50', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmOGFwxrl6X5ESHEnfcv6eefm6lbQcypC_6V0qNYVrIWcLrLf78WvCRQAeKpFJprs5tC0&usqp=CAU', true);
+INSERT INTO CONTA(nome, descricao, saldo, logotipo, status ) VALUES ('Nubank', 'Conta com rendimento 100% do CDI', '3421.12', 'https://nubank.com.br/_next/static/images/cbf49577e11c5507dbd0019319ae8a66-kit-logo.png', true);
 
 INSERT INTO LANCAMENTO(descricao, valor, data_criacao, tipo_entrada, conta_id, usuario_id) VALUES ('Computador novo', 5500.65, '2022-04-08', 'SAIDA', 1, 1);
 INSERT INTO LANCAMENTO(descricao, valor, data_criacao, tipo_entrada, conta_id, usuario_id) VALUES ('Compras no mercado', 55.50, '2022-03-08', 'SAIDA', 1, 2);
