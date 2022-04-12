@@ -6,4 +6,6 @@ import br.com.anderson.controlefinanceiro.modelo.Conta;
 
 public interface ContaRepository extends JpaRepository<Conta, Long> {
 
+	Conta findByNome(String nome);
+
 }

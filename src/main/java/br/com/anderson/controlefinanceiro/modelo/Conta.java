@@ -15,11 +15,18 @@ public class Conta {
 	private Long id;
 	private String nome;
 	private String descricao;
-	private BigDecimal saldo;
+	private BigDecimal saldo = new BigDecimal("0.00");
 	private String logotipo;
-	private Boolean status;
+	private Boolean status = true;
 	
 	public Conta() {
+	}
+
+	public Conta(String nome, String descricao, BigDecimal saldo, String logotipo) {
+		this.nome = nome;
+		this.descricao = descricao;
+		this.saldo = saldo;
+		this.logotipo = logotipo;		
 	}
 
 	public BigDecimal getSaldo() {

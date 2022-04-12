@@ -1,5 +1,6 @@
 package br.com.anderson.controlefinanceiro.controller;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,14 +11,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.anderson.controlefinanceiro.dto.conta.ContaDetailsDto;
 import br.com.anderson.controlefinanceiro.dto.conta.ContaDto;
 import br.com.anderson.controlefinanceiro.form.conta.AtualizaContaForm;
+import br.com.anderson.controlefinanceiro.form.conta.ContaForm;
 import br.com.anderson.controlefinanceiro.modelo.Conta;
 import br.com.anderson.controlefinanceiro.repository.ContaRepository;
 
@@ -52,9 +56,17 @@ public class ContaController {
 			Conta conta = form.atualizar(id, contaRepository);
 			return ResponseEntity.ok(new ContaDto(conta));
 		}
-		
 		return ResponseEntity.notFound().build();
+	}
+	
+	@PostMapping()
+	@Transactional
+	public ResponseEntity<ContaDto> cadastrar(@RequestBody @Valid ContaForm form, UriComponentsBuilder uriBuilder) {
+		Conta conta  = form.converter(contaRepository);
+		contaRepository.save(conta);
 		
+		URI uri = uriBuilder.path("/conta/{id}").buildAndExpand(conta.getId()).toUri();
+		return ResponseEntity.created(uri).body(new ContaDto(conta));
 	}
 
 }
