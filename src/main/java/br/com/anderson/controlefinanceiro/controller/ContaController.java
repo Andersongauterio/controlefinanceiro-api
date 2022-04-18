@@ -21,7 +21,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import br.com.anderson.controlefinanceiro.dto.conta.ContaDetailsDto;
 import br.com.anderson.controlefinanceiro.dto.conta.ContaDto;
 import br.com.anderson.controlefinanceiro.form.conta.AtualizaContaForm;
-import br.com.anderson.controlefinanceiro.form.conta.ContaForm;
+import br.com.anderson.controlefinanceiro.form.conta.CadastraContaForm;
 import br.com.anderson.controlefinanceiro.modelo.Conta;
 import br.com.anderson.controlefinanceiro.repository.ContaRepository;
 
@@ -61,12 +61,14 @@ public class ContaController {
 	
 	@PostMapping()
 	@Transactional
-	public ResponseEntity<ContaDto> cadastrar(@RequestBody @Valid ContaForm form, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<ContaDto> cadastrar(@RequestBody @Valid CadastraContaForm form, UriComponentsBuilder uriBuilder) {
 		Conta conta  = form.converter(contaRepository);
 		contaRepository.save(conta);
 		
 		URI uri = uriBuilder.path("/conta/{id}").buildAndExpand(conta.getId()).toUri();
 		return ResponseEntity.created(uri).body(new ContaDto(conta));
 	}
+	
+
 
 }

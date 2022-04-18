@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.Length;
 import br.com.anderson.controlefinanceiro.modelo.Conta;
 import br.com.anderson.controlefinanceiro.repository.ContaRepository;
 
-public class ContaForm {
+public class CadastraContaForm {
 	
 	@NotNull @NotEmpty @Length(min = 2, max = 50)
 	private String nome;

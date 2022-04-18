@@ -21,24 +21,29 @@ public class Lancamento {
 	private BigDecimal valor;
 	private LocalDate dataCriacao;
 	@Enumerated(EnumType.STRING)
-	private TipoMovimento tipoEntrada;
+	private TipoMovimento tipoMovimento;
 	@ManyToOne
 	private Conta conta;
 	@ManyToOne
 	private Usuario usuario;
 	
 	public Lancamento() {
-		
 	}
-
-	public Lancamento(String descricao, BigDecimal valor, LocalDate dataCriacao, TipoMovimento tipoEntrada,
-			Conta conta_id, Usuario usuario_id) {
+	
+	public Lancamento (String descricao, BigDecimal valor, LocalDate dataCriacao, String tipoMovimento, Conta conta, Usuario usuario) {
 		this.descricao = descricao;
 		this.valor = valor;
 		this.dataCriacao = dataCriacao;
-		this.tipoEntrada = tipoEntrada;
-		this.conta = conta_id;
-		this.usuario = usuario_id;
+		this.tipoMovimento = TipoMovimento.valueOf(tipoMovimento);
+		this.conta = conta;
+		this.usuario = usuario;
+	}
+
+	public Lancamento(String descricao, BigDecimal valor, String tipoMovimento, Conta conta) {
+		this.descricao = descricao;
+		this.valor = valor;
+		this.tipoMovimento = TipoMovimento.valueOf(tipoMovimento);
+		this.conta = conta;
 	}
 
 	public Long getId() {
@@ -73,12 +78,12 @@ public class Lancamento {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public TipoMovimento getTipoEntrada() {
-		return tipoEntrada;
+	public TipoMovimento gettipoMovimento() {
+		return tipoMovimento;
 	}
 
-	public void setTipoEntrada(TipoMovimento tipoEntrada) {
-		this.tipoEntrada = tipoEntrada;
+	public void settipoMovimento(TipoMovimento tipoMovimento) {
+		this.tipoMovimento = tipoMovimento;
 	}
 
 	public Conta getConta() {
