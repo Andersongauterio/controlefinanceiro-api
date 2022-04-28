@@ -1,5 +1,5 @@
-INSERT INTO USUARIO(nome) VALUES ('Anderson');
-INSERT INTO USUARIO(nome) VALUES ('Ana');
+INSERT INTO USUARIO(nome, email, senha) VALUES ('Anderson', 'anderson@gmail.com', '$2a$10$7sJfnRfZlYuhrZIs8Her1upydhmsxw1Ohzv2idcrcO8b6EAHyspyO');
+INSERT INTO USUARIO(nome, email, senha) VALUES ('Ana', 'ana@gmail.com', '$2a$10$O430/BmuCfSqU.KKZ3NS6Ot/esFG2NJgyydm89neprg6XOq2EwWHi');
 
 INSERT INTO CONTA(nome, descricao, saldo, logotipo, status ) VALUES ('Itau', 'Conta principal', '1900.50', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmOGFwxrl6X5ESHEnfcv6eefm6lbQcypC_6V0qNYVrIWcLrLf78WvCRQAeKpFJprs5tC0&usqp=CAU', true);
 INSERT INTO CONTA(nome, descricao, saldo, logotipo, status ) VALUES ('Nubank', 'Conta com rendimento 100% do CDI', '3421.12', 'https://nubank.com.br/_next/static/images/cbf49577e11c5507dbd0019319ae8a66-kit-logo.png', true);
